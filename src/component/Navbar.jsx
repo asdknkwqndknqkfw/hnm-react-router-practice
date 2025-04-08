@@ -11,9 +11,11 @@ const Navbar = () => {
         <FontAwesomeIcon icon={faUser} />
         <div>로그인</div>
       </div>
+
       <div className="nav-section">
         <img width={100} height={100} src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/800px-H%26M-Logo.svg.png" />
       </div>
+      
       <div className="menu-area">
         <ul className="menu-list">
           {menuList.map((menu, index) => (
