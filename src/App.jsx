@@ -21,7 +21,7 @@ import Navbar from './component/Navbar'
 // 7. 상품을 검색 할 수 있다.
 
 function App() {
-  const [isLogin, setIsLogin] = useState(false)
+  const [authenticate, setAuthenticate] = useState(false) // 로그인 여부
 
   return (
     <>

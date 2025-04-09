@@ -11,13 +11,9 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="login-button">
+      <div className="login-button" onClick={() => navigate("/login")}>
         <FontAwesomeIcon icon={faUser} />
-        <button 
-          onClick={() => navigate("/login")}
-        >
-          로그인
-        </button>
+        <div>로그인</div>
       </div>
 
       <div className="nav-section">

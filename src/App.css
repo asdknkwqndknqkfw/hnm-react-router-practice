@@ -57,11 +57,5 @@
   background-color: white;
   text-decoration: none;
   color: black;
-}
-
-.login-button button {
-  border: none;
-  background-color: white;
-  text-decoration: none;
-  color: black;
+  cursor: pointer;
 }
