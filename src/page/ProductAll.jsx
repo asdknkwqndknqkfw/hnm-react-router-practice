@@ -6,12 +6,13 @@ const ProductAll = () => {
   const [productList, setProductList] = useState([]);
 
   const getProducts = async () => {
-    // const address = 'http://localhost:5000';
-    const address = 'https://my-json-server.typicode.com';
-    let url = `${address}/products`;
+    // let url = 'http://localhost:5000/products';
+    let url = 'https://my-json-server.typicode.com/asdknkwqndknqkfw/hnm-react-router-practice/db';
     try {
       let response = await axios.get(url);
-      setProductList(response.data);
+      console.log('response: ', response);
+      // setProductList(response.data);
+      setProductList(response.data.products);
     } catch (error) {
       console.log('getProducts error', error);
     }
