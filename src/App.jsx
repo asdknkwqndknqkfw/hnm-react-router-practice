@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -23,12 +23,16 @@ import Navbar from './component/Navbar'
 function App() {
   const [authenticate, setAuthenticate] = useState(false) // 로그인 여부
 
+  useEffect(() => {
+    console.log("authenticate value: ", authenticate);
+  }, [authenticate]);
+
   return (
     <>
       <Navbar />
       <Routes>
         <Route path="/" element={<ProductAll />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login setAuthenticate={setAuthenticate}/>} />
         <Route path="/product/:id" element={<ProductDetail />} />
       </Routes>
     </>
