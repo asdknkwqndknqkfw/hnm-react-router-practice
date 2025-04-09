@@ -6,7 +6,9 @@ const ProductAll = () => {
   const [productList, setProductList] = useState([]);
 
   const getProducts = async () => {
-    let url = `http://localhost:5000/products`;
+    // const address = 'http://localhost:5000';
+    const address = 'https://my-json-server.typicode.com';
+    let url = `${address}/products`;
     try {
       let response = await axios.get(url);
       setProductList(response.data);
