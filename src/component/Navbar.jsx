@@ -9,6 +9,12 @@ const Navbar = () => {
   const menuList = ["여성", "Divided", "남성", "신생아/유아", "아동", "H&M Home", "Sale", "지속가능성"]
   const navigate = useNavigate();
 
+  const search = (e) => {
+    if (e.key === "Enter") {
+      navigate(`/?q=${e.target.value}`);
+    }
+  }
+
   return (
     <div>
       <div className="login-button" onClick={() => navigate("/login")}>
@@ -28,7 +34,12 @@ const Navbar = () => {
         </ul>
         
         <div className="search-area">
-          <input className="search-input" type="text" placeholder="제품검색" />
+          <input 
+            className="search-input" 
+            type="text" 
+            placeholder="제품검색" 
+            onKeyUp={search}
+          />
           <FontAwesomeIcon icon={faSearch} />
         </div>
       </div>
