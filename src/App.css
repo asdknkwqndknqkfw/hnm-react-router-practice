@@ -16,6 +16,32 @@
   padding: 10px;
 }
 
+/* 모바일 화면에서 사이드 메뉴로 변경 */
+@media (max-width: 768px) {
+  .menu-list {
+    position: fixed; /* 메뉴를 화면의 왼쪽에 고정 */
+    top: 0; /* 상단에 위치 */
+    left: 0; /* 왼쪽에 위치 */
+    width: 250px; /* 사이드 메뉴 너비 설정 */
+    height: 100vh; /* 전체 화면 높이를 차지 */
+    background-color: #fff; /* 배경색 */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* 사이드 메뉴에 그림자 */
+    display: block; /* 세로로 메뉴 나열 */
+    padding: 20px;
+    z-index: 1000; /* 메뉴가 다른 요소들 위에 오도록 */
+    overflow-y: auto; /* 메뉴 내용이 많을 경우 스크롤 가능 */
+  }
+
+  .menu-list li {
+    padding: 10px 0; /* 항목 간 간격 */
+    border-bottom: 1px solid #ddd; /* 메뉴 항목 구분선 */
+  }
+  
+  .nav-section {
+    display: none; /* 로고 영역은 모바일에서 숨김 처리 */
+  }
+}
+
 .menu-area {
   display: flex;
   justify-content: center;
