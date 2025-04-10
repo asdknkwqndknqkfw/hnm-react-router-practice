@@ -2,22 +2,21 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import ProductCard from '../component/ProductCard';
 import { Col, Container, Row } from 'react-bootstrap';
-import { useLocation } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
+
 const ProductAll = () => {
   const [productList, setProductList] = useState([]);
-  const location = useLocation();
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useSearchParams();
 
   const getProducts = async () => {
-    const query = new URLSearchParams(location.search);
-    let searchQuery = query.get('q') || '';
+    let searchQuery = query.get('q') ? `?q=${query.get('q')}` : '';
     console.log('searchQuery: ', searchQuery);
-    let url = 'https://my-json-server.typicode.com/asdknkwqndknqkfw/hnm-react-router-practice/db?q=${searchQuery}';
+    let url = `https://my-json-server.typicode.com/asdknkwqndknqkfw/hnm-react-router-practice/products${searchQuery}`;
+    console.log('url: ', url);
     try {
       let response = await axios.get(url);
-      console.log('response: ', response);
-      // setProductList(response.data);
-      setProductList(response.data.products);
+      console.log('response data: ', response.data);
+      setProductList(response.data);
     } catch (error) {
       console.log('getProducts error', error);
     }
